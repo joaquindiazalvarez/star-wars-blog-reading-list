@@ -14,7 +14,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			]
 			,
-		data: {
 			gryffindor: [
 				{
 					"name": "Harry Potter",
@@ -42,7 +41,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					"image": "http://hp-api.herokuapp.com/images/harry.jpg"
 				}
 			]
-		}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
