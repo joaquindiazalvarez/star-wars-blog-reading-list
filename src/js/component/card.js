@@ -36,10 +36,10 @@ export function Card(props){
         <>
         <div className="col-2">
             <div className="card" style={{width: "18rem"}}>
-                <img className="card-img-top" src={character.image} alt="Card image cap" height ="400" width="300"></img>
+                <img className="card-img-top" src={character?.image} alt="Card image cap" height ="400" width="300"></img>
                 <div className="card-body">
-                    <h5 className="card-title">{character.name}</h5>
-                    <p className="card-text">Ancestry : {character.ancestry}<br/>Patronus : {character.patronus}<br/>Actor : {character.actor}</p>
+                    <h5 className="card-title">{character?.name}</h5>
+                    <p className="card-text">Ancestry : {character?.ancestry}<br/>Patronus : {character?.patronus}<br/>Actor : {character?.actor}</p>
                     <a href="#" className="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

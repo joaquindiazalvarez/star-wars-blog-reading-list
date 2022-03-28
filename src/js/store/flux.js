@@ -166,17 +166,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://hp-api.herokuapp.com/api/characters/house/gryffindor")
 				.then(response => response.json())
 				.then(result => {setStore(store.gryffindor=[result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]])
-								console.log(store.gryffindor)
-								console.log(result[0])})
+								console.log("fetch funcionando")})
 				.catch(error => console.log('error', error));
 			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			gpage2: ()=>{
+			scrollRightGryffindor: ()=>{
+				const actions = getActions();
 				const store = getStore();
-				setStore(store.gpage = 2)
-				console.log(store)
+				setStore(store.gpage = store.gpage + 1)
+				actions.getGryffindor();
+			},
+			scrollLeftGryffindor: ()=>{
+				const actions = getActions();
+				const store = getStore();
+				setStore(store.gpage = store.gpage - 1)
+				actions.getGryffindor();
 			},
 			loadSomeData: () => {
 				/**

@@ -22,7 +22,7 @@ export const Home = () => {
 		<div className="row">
             <div className="text-center">
                     <button type="button" className="btn btn-secondary" 
-					onClick={actions.getGryffindor}>hola</button>
+					onClick={actions.scrollRightGryffindor}>hola</button>
             </div> 
         </div>
 {/* 		
