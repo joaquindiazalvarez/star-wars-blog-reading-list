@@ -2,35 +2,15 @@ import React, { useContext, useState } from "react"
 import { Context } from "../store/appContext"
 export function Card(props){
     const {store, actions} = useContext(Context);
-    if(props.house==="g"){
-        var house = store.gryffindor;
+    for(let i = 0; i < 4; i++){
+        if(props.house === store.houseArray[i]){
+            var houseObtained = store.houseArray[i];
+        }
     }
-    else if(props.house==="h"){
-        var house = store.hufflepuff;
-    }
-    else if(props.house==="r"){
-        var house = store.ravenclaw;
-    }
-    else if(props.house==="s"){
-        var house = store.slythering;
-    }
-    if(props.position==="first"){
-        var character = house[0];
-    }
-    else if(props.position==="second"){
-        var character = house[1];
-    }
-    else if(props.position==="third"){
-        var character = house[2];
-    }
-    else if(props.position==="fourth"){
-        var character = house[3];
-    }
-    else if(props.position==="fifth"){
-        var character = house[4];
-    }
-    else if(props.position==="sixth"){
-        var character = house[5];
+    for(let j = 0; j < 6; j++){
+        if(j === Number(props.position)){
+            var character = store[houseObtained][j]
+        }
     }
     return( 
         <>
@@ -40,7 +20,7 @@ export function Card(props){
                 <div className="card-body">
                     <h5 className="card-title">{character?.name}</h5>
                     <p className="card-text">Ancestry : {character?.ancestry}<br/>Patronus : {character?.patronus}<br/>Actor : {character?.actor}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <a href="#" className="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
