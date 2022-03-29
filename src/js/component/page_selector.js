@@ -39,7 +39,7 @@ export function PageSelector(props){
     <div>
         <nav aria-label="Page navigation example">
             <ul className="pagination justify-content-center">
-                <li className={store.page[houseObtained]<= 1 ? ("page-item disabled", console.log(houseObtained)) : "page-item"} onClick={scrollLeft}>
+                <li className={store.page[houseObtained]<= 1 ? ("page-item disabled", console.log(store.page[houseObtained])) : "page-item"} onClick={scrollLeft}>
                     <a className="page-link">Previous</a>
                 </li>
                 <li className="page-item" onClick={scrollRight}>

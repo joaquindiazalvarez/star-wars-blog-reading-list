@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react"
 import { Context } from "../store/appContext"
+import { Link } from "react-router-dom";
 export function Card(props){
     const {store, actions} = useContext(Context);
     for(let i = 0; i < 4; i++){
@@ -12,6 +13,9 @@ export function Card(props){
             var character = store[houseObtained][j]
         }
     }
+    var charSelected = character?.name;
+    var aux = charSelected.split(" ");
+    charSelected = "/character/" + aux.join("_")
     return( 
         <>
         <div className="col-2">
@@ -20,7 +24,7 @@ export function Card(props){
                 <div className="card-body">
                     <h5 className="card-title">{character?.name}</h5>
                     <p className="card-text">Ancestry : {character?.ancestry}<br/>Patronus : {character?.patronus}<br/>Actor : {character?.actor}</p>
-                    <a href="#" className="btn btn-primary">View</a>
+                    <Link to={charSelected}><button type="button" className="btn btn-secondary">View</button></Link>
                 </div>
             </div>
         </div>

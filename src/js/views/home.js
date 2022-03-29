@@ -12,7 +12,7 @@ export const Home = () => {
 	return(
 		 <div>{houseArray.map((value, item)=>{
 			 return(
-				 <div>
+				 <div className="container-fluid">
 				 	<div className="text-center mt-5">
 					 	<div className="row d-flex flex-row bd-highlight mb-3 flex-nowrap">
 						 	{card.map((v, i)=>{return(
