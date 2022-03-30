@@ -5,7 +5,7 @@ import { Context } from "../store/appContext"
 
 export const Navbar = () => {
 	const {store, actions} = useContext(Context);
-	console.log(store.favoriteArray)
+	console.log(store.favoriteArray);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -18,17 +18,16 @@ export const Navbar = () => {
   				<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     			Favorites
   				</button>
- 				 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-					{store.favoriteArray.map((value, k)=>{
+ 				 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">				
+						{store.favoriteArray.map((value, k)=>{
 						return(
 						<li>
 							<Link to={'/character/' + value}>
-								<a className="dropdown-item" href="#">{value}</a>
+								<div className="dropdown-item" href="#">{value}</div>
 							</Link>
 							<div
 								onClick={() => {
 									actions.deleteFromFavorites(value);
-									console.log(store.favoriteArray)
 								}}>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -48,15 +47,9 @@ export const Navbar = () => {
 								</svg>
 							</div>
 						</li>
-						
 	)})}
   				</ul>
 			</div>
-			{/* <div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div> */}
 		</nav>
 	);
 };

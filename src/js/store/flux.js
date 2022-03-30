@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			page : [1, 1, 1, 1],
-			favoriteArray : ["Harry Potter", "Ron Weasley","Hermione Granger","Minerva McGonagall", "Rubeus Hagrid"],
+			favoriteArray : [],
 			houseArray: ["gryffindor", "hufflepuff", "ravenclaw", "slytherin"],
 			gryffindor: [],
 			hufflepuff: [],
@@ -41,8 +41,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						var page = store.page[1];
 						fetch("https://hp-api.herokuapp.com/api/characters/house/hufflepuff")
 						.then(response => response.json())
-						.then(result => {setStore({hufflepuff:[result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})
-										console.log("fetch funcionando")})
+						.then(result => {setStore({hufflepuff:[result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})})
 						.catch(error => console.log('error', error));
 					},
 					scrollRight: ()=>{
@@ -65,8 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						var page = store.page[2];
 						fetch("https://hp-api.herokuapp.com/api/characters/house/ravenclaw")
 						.then(response => response.json())
-						.then(result => {setStore({ravenclaw : [result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})
-										console.log("fetch funcionando")})
+						.then(result => {setStore({ravenclaw : [result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})})
 						.catch(error => console.log('error', error));
 					},
 					scrollRight: ()=>{
@@ -89,8 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						var page = store.page[3];
 						fetch("https://hp-api.herokuapp.com/api/characters/house/slytherin")
 						.then(response => response.json())
-						.then(result => {setStore({slytherin:[result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})
-										console.log("fetch funcionando")})
+						.then(result => {setStore({slytherin:[result[0 + (page - 1)*6],result[1 + (page - 1)*6], result[2 + (page - 1)*6], result[3 + (page - 1)*6], result[4 + (page - 1)*6], result[5 + (page - 1)*6]]})})
 						.catch(error => console.log('error', error));
 					},
 					scrollRight: ()=>{
@@ -113,8 +110,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addToFavorites: function(name){
 				const store = getStore();
-				console.log("hola")
-				setStore({favoriteArray: store.favoriteArray.push(name)})
+				setStore(store.favoriteArray.push(name))
+				console.log(store.faforiteArray);
 			},
 		}
 	};
