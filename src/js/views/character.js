@@ -20,20 +20,15 @@ export const Character = props => {
 		
 	},[])
 	useEffect(()=>{
-		console.log("este es mi fetch")
-		console.log(entireFetch)
 		var charParam = params.theid;
 		charParam = charParam.split("_");
 		charParam = charParam.join(" ");
 		for(let i = 0; i < entireFetch.length; i++){
 			if(entireFetch[i].name === charParam){
 				setObject(entireFetch[i]);
-				console.log(charObject) 
 	 		}
 		}
 	},[entireFetch])
-	console.log("este es mi objeto")
-	console.log(charObject)
 	return (
 		<div className="container">
 			<div className="row">

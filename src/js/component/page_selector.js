@@ -10,31 +10,6 @@ export function PageSelector(props){
             var scrollRight = actions[store.houseArray[i]].scrollRight;  
         }
     }
-    /*
-    if(props.house === "g"){
-        var max = 8;
-        house = gpage;
-        var scrollLeft = actions.scrollLeftGryffindor
-        var scrollRight = actions.scrollRightGryffindor
-    }
-    else if(props.house === "h"){
-        var max = 8;
-        house = hpage;
-        var scrollLeft = actions.scrollLeftHufflepuff
-        var scrollRight = actions.scrollRightHufflepuff
-    }
-    else if(props.house === "r"){
-        var max = 8;
-        house = rpage;
-        var scrollLeft = actions.scrollLeftRavenclaw
-        var scrollRight = actions.scrollRightRavenclaw
-    }
-    else if(props.house === "h"){
-        var max = 8;
-        house = spage;
-        var scrollLeft = actions.scrollLeftSlytherin
-        var scrollRight = actions.scrollRightSlytherin
-    }*/
     return(
     <div>
         <nav aria-label="Page navigation example">

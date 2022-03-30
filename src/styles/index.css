@@ -1,3 +1,10 @@
-/* 
-    General Styles
-*/
+@font-face {
+    font-family: HARRYP;
+    src: url(./font/HARRYP__.TTF);
+  }
+h1{
+    font-size: 6rem;
+}
+li{
+  display: flex;
+}

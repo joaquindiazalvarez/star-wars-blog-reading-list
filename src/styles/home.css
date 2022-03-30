@@ -1,0 +1,7 @@
+@font-face {
+    font-family: HARRYP;
+    src: url(./font/HARRYP__.TTF);
+  }
+h1{
+    font-family: HARRYP;
+}
