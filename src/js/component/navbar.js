@@ -15,7 +15,7 @@ export const Navbar = () => {
 				<h1>Harry Potter Blog</h1>
 			</div>
 			<div className="dropdown me-4">
-  				<button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  				<button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     			Favorites
   				</button>
  				 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">				

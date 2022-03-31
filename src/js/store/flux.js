@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			page : [1, 1, 1, 1],
+			max: [8, 3, 4, 8],
 			favoriteArray : [],
 			houseArray: ["gryffindor", "hufflepuff", "ravenclaw", "slytherin"],
 			gryffindor: [],
@@ -24,14 +25,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				scrollRight: ()=>{
 					const actions = getActions();
 					const store = getStore();
-					setStore(store.page[0] = store.page[0] + 1)
-					actions.gryffindor.getGryffindor();
+					if(store.page[0] < store.max[0]){
+						setStore(store.page[0] = store.page[0] + 1)
+						actions.gryffindor.getGryffindor();
+					}
 				},
 				scrollLeft: ()=>{
 					const actions = getActions();
 					const store = getStore();
-					setStore(store.page[0] = store.page[0] - 1)
-					actions.gryffindor.getGryffindor();
+					if(store.page[0] > 1){
+						setStore(store.page[0] = store.page[0] - 1)
+						actions.gryffindor.getGryffindor();
+					}
 				},
 			},
 			hufflepuff: 
@@ -47,14 +52,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					scrollRight: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[1] = store.page[1] + 1)
-						actions.hufflepuff.getHufflepuff();
+						if(store.page[1] < store.max[1]){
+							setStore(store.page[1] = store.page[1] + 1)
+							actions.hufflepuff.getHufflepuff();
+						}
 					},
 					scrollLeft: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[1] = store.page[1] - 1)
-						actions.hufflepuff.getHufflepuff();
+						if(store.page[1] > 1){
+							setStore(store.page[1] = store.page[1] - 1)
+							actions.hufflepuff.getHufflepuff();
+						}
 					},
 				},
 			ravenclaw: 
@@ -70,14 +79,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					scrollRight: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[2] = store.page[2] + 1)
-						actions.ravenclaw.getRavenclaw();
+						if(store.page[2] < store.max[2]){
+							setStore(store.page[2] = store.page[2] + 1)
+							actions.ravenclaw.getRavenclaw();
+						}
 					},
 					scrollLeft: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[2] = store.page[2] - 1)
-						actions.ravenclaw.getRavenclaw();
+						if(store.page[2] > 1){
+							setStore(store.page[2] = store.page[2] - 1)
+							actions.ravenclaw.getRavenclaw();
+						}
 					},
 				},
 			slytherin: 
@@ -93,14 +106,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					scrollRight: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[3] = store.page[3] + 1)
-						actions.slytherin.getSlytherin();
+						if(store.page[3] < store.max[3]){
+							setStore(store.page[3] = store.page[3] + 1)
+							actions.slytherin.getSlytherin();
+						}
 					},
 					scrollLeft: ()=>{
 						const actions = getActions();
 						const store = getStore();
-						setStore(store.page[3] = store.page[3] - 1)
-						actions.slytherin.getSlytherin();
+						if(store.page[3] > 1){
+							setStore(store.page[3] = store.page[3] - 1)
+							actions.slytherin.getSlytherin();
+						}
 					},
 			},
 			deleteFromFavorites: function(name){
@@ -110,8 +127,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			addToFavorites: function(name){
 				const store = getStore();
-				setStore(store.favoriteArray.push(name))
-				console.log(store.faforiteArray);
+				if(!(store.favoriteArray.includes(name))){
+					setStore(store.favoriteArray.push(name))
+					console.log(store.faforiteArray);
+				}
 			},
 		}
 	};
