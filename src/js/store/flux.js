@@ -122,14 +122,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			deleteFromFavorites: function(name){
 				const store = getStore();
-				console.log(name);
 				setStore({favoriteArray: store.favoriteArray.filter((value)=>{return(value != name)})})
 			},
 			addToFavorites: function(name){
 				const store = getStore();
 				if(!(store.favoriteArray.includes(name))){
 					setStore(store.favoriteArray.push(name))
-					console.log(store.faforiteArray);
 				}
 			},
 		}
